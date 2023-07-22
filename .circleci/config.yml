@@ -1,0 +1,90 @@
+version: 4.0
+
+executors:
+  default:
+    working_directory: ~/hotel_pro
+    docker:
+      - image: circleci/ruby:3.2.2
+        environment:
+          BUNDLE_JOBS: 3
+          BUNDLE_PATH: vendor/bundle
+          BUNDLE_RETRY: 3
+          BUNDLER_VERSION: 2.4.17
+          RAILS_ENV: test
+          DB_HOST: 127.0.0.1
+          PG_HOST: 127.0.0.1
+          PGUSER: hotel_pro
+      - image: circleci/postgres:14.6
+        environment:
+          POSTGRES_DB: hotel_pro_postgresql_test
+          POSTGRES_USER: hotel_pro
+
+commands:
+  configure_bundler:
+    description: Configure bundler
+    steps:
+      - run:
+          name: Configure bundler
+          command: |
+            echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
+            source $BASH_ENV
+            gem install bundler
+
+jobs:
+  build:
+    executor: default
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - hotel_pro-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+            - hotel_pro-
+      - configure_bundler
+      - run:
+          name: Install bundle
+          command: bundle install
+      - run:
+          name: Wait for DB
+          command: dockerize -wait tcp://127.0.0.1:5432 -timeout 1m
+      - run:
+          name: Setup DB
+          command: bundle exec rails db:create db:schema:load --trace
+      - run: 
+          name: RSpec
+          commands: |
+            bundle exec rspec --profile 10 \
+                              --format progress
+      - store_artifacts:
+          path: coverage        
+      - save_cache:
+          key: hotel_pro-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - ./hotel_pro
+  
+rubocop:
+  executor: default
+  steps:
+    - attach_workspace:
+        at: ~/
+    - configure_bundler
+    - run:
+        name: Rubocop
+        command: bundle exec rubocop
+
+workflows:
+  version: 2
+  integration:
+    jobs:
+      - build
+      - rubocop:
+          requires:
+            - build
+workflows:
+  version: 2
+  integration:
+    jobs:
+      - build
