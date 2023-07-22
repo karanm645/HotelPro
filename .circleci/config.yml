@@ -83,8 +83,3 @@ workflows:
       - rubocop:
           requires:
             - build
-workflows:
-  version: 2
-  integration:
-    jobs:
-      - build
