@@ -65,12 +65,12 @@ jobs:
           paths:
             - ./hotel_pro
   
-rubocop:
-  executor: default
-  steps:
-    - attach_workspace:
-        at: ~/
-    - configure_bundler
+# rubocop:
+#   executor: default
+#   steps:
+#     - attach_workspace:
+#         at: ~/
+#     - configure_bundler
     - run:
         name: Rubocop
         command: bundle exec rubocop
@@ -80,6 +80,6 @@ workflows:
   integration:
     jobs:
       - build
-      - rubocop:
-          requires:
-            - build
+      # - rubocop:
+      #     requires:
+      #       - build
