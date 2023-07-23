@@ -2,7 +2,7 @@ version: '2.1'
 
 orbs:
   ruby: circleci/ruby@1.1.0
-  rubocop: hanachin/rubocop@0.0.6
+  #rubocop: hanachin/rubocop@0.0.6
 
 workflows: 
   test-deploy:
@@ -17,7 +17,7 @@ jobs:
     steps:
       - checkout
       - ruby/install-deps
-      - ruby/rubocop-check
+      - ruby/rubocop-check:
           format: progress
           label: Inspecting with Rubocop
 
