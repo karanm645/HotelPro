@@ -16,7 +16,7 @@ jobs:
       - checkout
       - run:
           name: Install dependencies 
-          command: - ruby/install-deps
+          - ruby/install-deps
 
 
       # - ruby/install-deps
