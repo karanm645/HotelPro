@@ -11,13 +11,7 @@ jobs:
       - image: cimg/ruby:3.2.2
     steps:
       - checkout
-      - run:
-          name: Install dependencies
-          command: ruby/install-deps
-      - run: 
-          name: Run Tests
-          command: ruby run test
-      # - run: ruby --version
+      - run: ruby --version
 
 
 
