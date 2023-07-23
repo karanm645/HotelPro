@@ -10,11 +10,11 @@ workflows:
 
 jobs:
   build:
-    # docker:
-    #   - image: cimg/ruby:3.2.2
-    # steps:
-    #   - checkout
-    #   - ruby/install-deps
+    docker:
+      - image: cimg/ruby:3.2.2
+    steps:
+      - checkout
+      - ruby/install-deps
 
 test:
     # parallelism: 3
