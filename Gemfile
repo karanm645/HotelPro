@@ -32,6 +32,8 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem 'simplecov', require: false, group: :test
+  gem "rspec_junit_formatter", require: false
 end
 
 # maybe useful in future --> gems
