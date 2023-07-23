@@ -6,10 +6,10 @@ orbs:
 workflows: 
   test-deploy:
     jobs:
-      - test
+      - build
 
 jobs:
-  # build:
+  build:
     # docker:
     #   - image: cimg/ruby:3.2.2
     # steps:
