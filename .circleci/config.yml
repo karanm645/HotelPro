@@ -24,7 +24,7 @@ jobs:
         - image: cimg/postgres:14.8
           environment:
             POSTGRES_USER: hotel_pro
-            POSTGRES_DB: hotel_pro_postgresql_test
+            POSTGRES_DB: hotel_pro_test
             POSTGRES_PASSWORD: ""
       environment:
         BUNDLE_JOBS: "3"
