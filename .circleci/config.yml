@@ -1,4 +1,16 @@
 version: '2.1'
+
+jobs:
+  build:
+    docker:
+      - image: cimg/ruby:3.2.2
+    steps:
+      - checkout
+      - run: ruby 3.2.2
+
+
+
+
 # # from this page: https://circleci.com/developer/ja/orbs/orb/circleci/ruby
 # orbs:
 #   ruby: circleci/ruby@2.0.1
