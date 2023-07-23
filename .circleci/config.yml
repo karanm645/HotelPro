@@ -17,7 +17,7 @@ jobs:
     steps:
       - checkout
       - ruby/install-deps
-      - ruby/rubocop-check:
+      - ruby/rubocop-check
           format: progress
           label: Inspecting with Rubocop
 
