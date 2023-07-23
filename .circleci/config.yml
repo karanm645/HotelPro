@@ -15,6 +15,10 @@ jobs:
     steps:
       - checkout
       - ruby/install-deps
+      - run:
+          name: Run Tests
+          command: ruby run test
+    
 
 
 
