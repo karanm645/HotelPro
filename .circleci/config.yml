@@ -15,7 +15,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install dependencies 
           - ruby/install-deps
 
 
