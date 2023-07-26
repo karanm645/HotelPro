@@ -20,7 +20,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'pry'
   gem 'launchy'
-  gem 'shoulda-matchers'
   gem 'orderly'
 end
 
@@ -30,6 +29,7 @@ group :development do
 end
 
 group :test do
+  gem 'shoulda-matchers', '~> 5.0'  
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
