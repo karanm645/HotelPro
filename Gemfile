@@ -16,8 +16,7 @@ gem 'rubocop', require: false
 gem "redis", "~> 4.0"
 
 group :development, :test do
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
-  gem 'rspec-rails'
+  #gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'pry'
   gem 'launchy'
   gem 'orderly'
@@ -29,7 +28,8 @@ group :development do
 end
 
 group :test do
-  gem 'shoulda-matchers', '~> 5.0'  
+  gem 'shoulda-matchers', '~> 5.0' 
+  gem 'rspec-rails' 
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
