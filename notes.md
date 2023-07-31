@@ -18,3 +18,7 @@
   - Connection string: postgres://postgres:74UpWoBl94G8sNZ@hotel-pro.flycast:5432
 
 Save your credentials in a secure place -- you won't be able to see them again!
+
+## fly.io prompts
+
+https://medium.com/@NadyaShevtsova/fly-io-import-postgres-dump-b7c643ccb673

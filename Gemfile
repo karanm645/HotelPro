@@ -42,7 +42,7 @@ end
   # gem "spring"
 
   # gem "kredis"
-  # gem "bcrypt", "~> 3.1.7"
+  gem "bcrypt", "~> 3.1.7"
   # gem "sassc-rails"
   # gem "image_processing", "~> 1.2"
-gem "dockerfile-rails", ">= 1.5", :group => :development
+  gem "dockerfile-rails", ">= 1.5", :group => :development
