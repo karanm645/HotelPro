@@ -3,3 +3,5 @@
 <% if current_user == @user %>
   <h2>test command goes here</h2>
 <% end  %>
+
+<%= link_to "Add Property", "/users/#{@user.id}/add_property", method: :get %>
