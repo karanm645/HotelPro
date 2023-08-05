@@ -12,7 +12,7 @@ RSpec.describe "Property Form" do
       #allow_any_instance_of(ActionDispatch::Request).to receive(:session) { { user_id: user.id } }
       # binding.pry
       expect(page).to have_link("Add Property")
-      save_and_open_page
+
       click_link "Add Property"
       visit "/users/#{user.id}/add_property"
 
@@ -22,12 +22,12 @@ RSpec.describe "Property Form" do
       fill_in('Street', with: '111 NJC ave')
       fill_in('City', with: 'Albuquerque')
       fill_in('State', with: 'New Mexico')
-      fill_in('Zip Code', with: 77963)
-      fill_in('Phone Number', with: 8706335716)
+      fill_in('Zip code', with: 77963)
+      fill_in('Phone number', with: 8706335716)
 
       click_button("Submit")
 
-      visit "/users/#{user.id}/add_rooms"
+      visit "/users/#{user.id}"
     end 
   end 
 end 

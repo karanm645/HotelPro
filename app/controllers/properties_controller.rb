@@ -1,4 +1,9 @@
 class PropertiesController < ApplicationController
+  def index
+    user = User.find_by(params[:user_id])
+    @properties = user.properties.all
+  end 
+
   def new 
     @property = Property.new
   end 
@@ -7,9 +12,9 @@ class PropertiesController < ApplicationController
     user = User.find_by(params[:user_id])
     property = user.properties.create!(property_params)
     property.save 
-    redirect_to "/users/#{user.id}"
-    
+    redirect_to user
   end 
+
 
 
   private

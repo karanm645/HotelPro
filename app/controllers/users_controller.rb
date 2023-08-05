@@ -8,10 +8,9 @@ class UsersController < ApplicationController
     @user = User.create!(user_params)
     if @user.valid?
         @user.save
-        binding.pry
         redirect_to @user
-    # else 
-    #   redirect_to :new
+    else 
+      redirect_to :new
     end 
   end 
 
