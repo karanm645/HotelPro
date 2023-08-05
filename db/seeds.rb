@@ -6,5 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-user = User.create!(username: "karanm645", password: "123")
-property = Property.user.create!(name: "Days Inn", street: "123", city: "ABQ", state: "AL", zip_code: 72397, phone_number: "7202222222")
+user1 = User.create!(username: "karanm645", password: "123")
+user2 = User.create!(username: "jj", password: "1234")
+user3 = User.create!(username: "kk", password: "1235")
+user4 = User.create!(username: "ll", password: "1232")
