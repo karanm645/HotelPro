@@ -5,12 +5,12 @@ class UsersController < ApplicationController
   end 
 
   def create 
-    @user = User.create(user_params)
+    @user = User.create!(user_params)
     if @user.valid?
         @user.save
         redirect_to @user
     else 
-      redirect :new
+      redirect_to :new
     end 
   end 
 
