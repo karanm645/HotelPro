@@ -1,10 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe "Room Form" do 
-  describe 'when user clicks the add rooms button' do 
-    it 'will take them to the room form' do
+RSpec.describe "Property Form" do 
+  describe 'when user clicks the add property button' do 
+    it 'will take them to the form' do
       user = User.create(username: "karanm645", password: "123")
-      property1 = user.properties.create!(name: "days inn", street: "111", city: "ABQ", state: "NM", zip_code: 77963, phone_number: 7206335555)
 
       visit "/users/#{user.id}"
       fill_in('Username', with: 'karanm645')
@@ -27,6 +26,8 @@ RSpec.describe "Room Form" do
       fill_in('Phone number', with: 8706335716)
 
       click_button("Submit")
+
+      # visit "/users/#{user.id}"
     end 
   end 
 end 

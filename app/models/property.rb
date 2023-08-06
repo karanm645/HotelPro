@@ -1,5 +1,7 @@
 class Property < ApplicationRecord
-belongs_to :user
+  belongs_to :user
+  has_many :rooms
+  
   validates :name, presence: true
   validates :street, presence: true  
   validates :city, presence: true

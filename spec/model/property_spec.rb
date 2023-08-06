@@ -12,5 +12,6 @@ RSpec.describe Property, type: :model do
 
   describe 'relations' do 
     it { should belong_to :user}
+    it { should have_many :rooms}
   end 
 end 
