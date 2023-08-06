@@ -27,10 +27,6 @@ RSpec.describe "Room Form" do
       fill_in('Phone number', with: 8706335716)
 
       click_button("Submit")
-
-      visit "/users/#{user.id}/add_rooms"
-
-
     end 
   end 
 end 
