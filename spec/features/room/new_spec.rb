@@ -27,7 +27,7 @@ RSpec.describe "Property Form" do
 
       click_button("Submit")
 
-      visit "/users/#{user.id}"
+      # visit "/users/#{user.id}"
     end 
   end 
 end 
