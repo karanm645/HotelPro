@@ -11,9 +11,10 @@ RSpec.describe "User Show Page" do
       #allow_any_instance_of(ActionDispatch::Request).to receive(:session) { { user_id: user.id } }
       # binding.pry
       expect(page).to have_link("Add Property")
+      expect(page).to have_link("View Properties")
+      
       click_link "Add Property"
       visit "/users/#{user.id}/add_property"
-
       expect(page).to have_text("Please Enter Your Property Information")
     end 
   end 
