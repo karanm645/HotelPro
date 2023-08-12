@@ -15,9 +15,13 @@ RSpec.describe "Property Form" do
 
       click_link "View Properties"
 
-      visit "/properties"
+      visit user_properties_path(user)
 
       expect(page).to have_text("days inn")
+
+      click_link property1.name 
+
+      visit user_property_path(user, property1)
     end 
   end 
 end

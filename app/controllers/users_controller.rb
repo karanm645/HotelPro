@@ -16,6 +16,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @property = @user.properties.find_by(params[:property_id])
   end 
 
   private

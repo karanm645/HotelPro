@@ -14,7 +14,7 @@ RSpec.describe "Property Form" do
       expect(page).to have_link("Add Property")
 
       click_link "Add Property"
-      visit "/users/#{user.id}/add_property"
+      visit new_user_property_path(user)
 
       expect(page).to have_text("Please Enter Your Property Information")
 

@@ -15,13 +15,18 @@ RSpec.describe "Property Form" do
       expect(page).to have_link("View Properties")
 
       click_link "View Properties"
-      visit "/properties"
+      visit user_properties_path(user)
       
       expect(page).to have_text(property1.name)
 
-      click_link "Add Rooms"
+      click_link property1.name
+      expect(page).to have_link("View Rooms")
+      
+      click_link("View Rooms")
+      expect(page).to have_link("Add Rooms")
+      click_link("Add Rooms")
 
-      visit "/add_rooms"
+      visit new_user_property_room_path(user, property1)
 
       fill_in('Room type', with: 'King')
       fill_in('Price', with: 59.99)
@@ -31,7 +36,7 @@ RSpec.describe "Property Form" do
 
 
       click_button("Submit")
-      visit "/dashboard"
+      visit user_property_rooms_path(user, property1)
     end 
   end 
 end 
