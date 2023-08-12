@@ -1,8 +1,7 @@
 <h1> Welcome to the page of <%= @user.username %></h1>
-
 <% if current_user == @user %>
   <h2>test command goes here</h2>
 <% end  %>
 
-<%= link_to "Add Property", "/users/#{@user.id}/add_property", method: :get %>
-<%= link_to "View Properties", "/properties", method: :get %>
+<%= link_to "Add Property", new_user_property_path(@user) %>
+<%= link_to "View Properties", user_properties_path(@user) %>

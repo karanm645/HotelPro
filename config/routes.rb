@@ -1,13 +1,23 @@
 Rails.application.routes.draw do
   root 'pages#home'
-  resources :users, only: [:create, :show]
-  resources :properties, only: [:create, :index]
-  resources :rooms, only: [:create, :index]
+  resources :users do
+    resources :properties do
+      resources :rooms
+    end 
+  end 
 
-  get "/dashboard", to: "rooms#index"
-  get "/add_rooms", to: "rooms#new"
 
-  get "/users/:user_id/add_property", to: "properties#new"
+  # resources :users, only: [:create, :show]
+  # resources :properties, only: [:create]
+  # resources :rooms, only: [:create]
+
+  # get "/dashboard", to: "rooms#index"
+  # get "/users/:user_id/properties/:property_id/add_rooms", to: "rooms#new"
+  # post "/users/:user_id/properties/:property_id/rooms", to: "rooms#create"
+
+  # get "/users/:user_id/properties/add_property", to: "properties#new"
+  # get "/users/:user_id/properties", to: "properties#index"
+  # get "/users/:user_id/properties/:property_id", to: "properties#show"
 
   get "/signup", to: "users#new"
 

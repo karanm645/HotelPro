@@ -1,6 +1,5 @@
-<h1>Dashboard</h1>
+<h1>All Rooms</h1>
 <% @rooms.each do |room| %>
-<p><%= room.room_type %></p>
-<p><%= room.smoking %></p>
-
+  <%= room.room_type %> ||
 <% end %>
+  <p><%= link_to "Add Rooms", new_user_property_room_path(@user, @property) %></p>
