@@ -1,0 +1,14 @@
+<%= form_for [@user, @property, @room] do |form| %>
+  <%= form.label :room_type %>
+  <%= form.text_field :room_type %>
+  <%= form.label :price %>
+  <%= form.text_field :price %>
+  <%= form.label :smoking %>
+  <%= form.check_box :smoking %>
+  <%= form.label :count %>
+  <%= form.text_field :count %>
+  <%= form.label :room_number %>
+  <%= form.text_field :room_number %>
+
+  <%= form.submit "Update"%>
+<% end %>
