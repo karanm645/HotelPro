@@ -21,7 +21,18 @@ class PropertiesController < ApplicationController
     redirect_to user_property_path(user, property)
   end 
 
+  def edit 
+    @user = current_user
+    @property = @user.properties.find(params[:id])
+  end 
 
+  def update 
+    @user = current_user
+    @property = @user.properties.find(params[:id])
+    @property.update(property_params)
+    @property.save 
+    redirect_to user_property_path(@user, @property)
+  end 
 
   private
 
