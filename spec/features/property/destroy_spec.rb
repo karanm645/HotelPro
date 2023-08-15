@@ -17,7 +17,7 @@ RSpec.describe "Delete Property", type: :feature do
 
       click_button "Delete"
 
-      visit user_property_rooms_path(user, property1)
+      visit user_properties_path(user)
       expect(page).to_not have_content("days inn")
     end 
   end 
