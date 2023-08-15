@@ -1,6 +1,5 @@
 <h1><%= @property.name.capitalize %></h1>
-  <% @property.rooms.each do |room| %>
-    <p><%= room.room_type %></p>
-  <% end %>
-  <p><%= link_to "View Rooms",  user_property_rooms_path(@user, @property)%></p>
-  <p><%= link_to "Edit",  edit_user_property_path(@user, @property)%></p>
+<p><%= link_to "View Rooms",  user_property_rooms_path(@user, @property)%></p>
+<p><%= link_to "Edit",  edit_user_property_path(@user, @property)%></p>
+<p><%= button_to "Delete", user_property_path(@user, @property), method: :delete %></p>
+

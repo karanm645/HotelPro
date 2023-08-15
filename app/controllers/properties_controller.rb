@@ -34,6 +34,13 @@ class PropertiesController < ApplicationController
     redirect_to user_property_path(@user, @property)
   end 
 
+  def destroy 
+    @user = current_user
+    @property = @user.properties.find(params[:id])
+    @property.destroy
+    redirect_to user_properties_path(@user)
+  end 
+
   private
 
   def property_params
