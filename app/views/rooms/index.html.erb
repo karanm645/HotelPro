@@ -1,5 +1,8 @@
 <h1>All Rooms</h1>
+
 <% @rooms.each do |room| %>
   <p><%= link_to room.room_type, user_property_room_path(@user, @property, room) %></p>
 <% end %>
-  <p><%= link_to "Add Rooms", new_user_property_room_path(@user, @property) %></p>
+
+<p><%= link_to "Add Rooms", new_user_property_room_path(@user, @property) %></p>
+<p><%= link_to "Back", user_property_path(@user, @property) %>
