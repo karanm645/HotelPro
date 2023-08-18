@@ -3,3 +3,5 @@
 <% @properties.each do |property| %>
   <p><%= link_to property.name, user_property_path(@user, property) %></p>
 <% end %>
+
+<p><%= link_to "Back", user_path(@user) %>
