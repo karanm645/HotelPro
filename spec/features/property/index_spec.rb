@@ -15,11 +15,11 @@ RSpec.describe "Property Index Page", type: :feature do
 
     it 'has a list of properties' do 
 
-      expect(page).to have_content("Days inn")
+      expect(page).to have_content("days inn")
     end 
     it 'has a back button to the user show page' do 
       click_link "Back"
-      visit user_path(@user1)
+      visit user_path(@user)
     end 
   end 
 end 
