@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     end 
   end 
 
+  resources :guests do 
+  end 
+
 
   # resources :users, only: [:create, :show]
   # resources :properties, only: [:create]

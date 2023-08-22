@@ -1,0 +1,5 @@
+<h1> All guests </h1>
+
+<% @guests.each do |guest| %>
+  <p><%= guest.last_name %>, <%= guest.first_name %>
+<% end %>
