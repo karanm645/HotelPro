@@ -1,5 +1,7 @@
 <h1>Room Details</h1>
 <p><%= @room.room_type %><p>
+<p><%= @room.smoking %><p>
+<p><%= @room.room_number %><p>
 <p><%= link_to "Edit", edit_user_property_room_path(@user, @property, @room) %><p>
 <p><%= link_to "Back", user_property_rooms_path(@user, @property) %></p>
 <p><%= button_to "Delete", user_property_room_path(@user, @property, @room), method: :delete %></p>
