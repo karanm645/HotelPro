@@ -1,7 +1,9 @@
 class GuestsController < ApplicationController
 
   def index 
-    @guests = Guest.all
+    @user = current_user
+    @property = @user.properties.find_by(params[:property_id])
+    @guests = @property.guests.all
   end 
   
   def new
@@ -9,7 +11,9 @@ class GuestsController < ApplicationController
   end 
 
   def create 
-    guest = Guest.create!(guest_params)
+    user = current_user
+    property = @user.properties.find_by(params[:property_id])
+    guest = property.guests.create!(guest_params)
     guest.save 
     # change this redirect to reservation form later
     redirect_to guests_path(guest)  
