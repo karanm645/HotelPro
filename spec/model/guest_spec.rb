@@ -7,4 +7,9 @@ RSpec.describe Guest, type: :model do
     it { should validate_presence_of(:phone_number)}
   end 
 
+  describe 'relations' do 
+    it { should belong_to :property}
+    xit { should have_many :reservations}
+  end 
+
 end 

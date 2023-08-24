@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe "Guest Form" do 
-  describe 'when user clicks the create reservation button' do 
+RSpec.describe "Reservation Form" do 
+describe 'when user clicks the create reservation button' do 
     before(:each) do 
       @user = User.create(username: "karanm645", password: "123")
       @property = @user.properties.create!(name: "days inn", street: "111", city: "ABQ", state: "NM", zip_code: 77963, phone_number: 7206335555)
@@ -29,12 +29,13 @@ RSpec.describe "Guest Form" do
 
       @guest = Guest.last
       visit new_guest_reservation_path(@guest)
-    end 
 
-    xit 'has a back button to the user show page' do 
-      click_link "Back"
+      expect(page).to have_text("Please Enter Check In and Check Out dates")
 
-      visit user_path(@user)
+      fill_in('Date in', with: '2023-11-19')
+      fill_in('Date out', with: '2023-11-20')
+
+      click_button("Submit")
     end 
   end 
 end 
