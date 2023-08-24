@@ -16,7 +16,7 @@ class GuestsController < ApplicationController
     guest = property.guests.create!(guest_params)
     guest.save 
     # change this redirect to reservation form later
-    redirect_to guests_path(guest)  
+    redirect_to new_guest_reservation_path(guest) 
   end
 
   private

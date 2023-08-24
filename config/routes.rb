@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   end 
 
   resources :guests do 
+    resources :reservations do 
+    end 
   end 
 
 
