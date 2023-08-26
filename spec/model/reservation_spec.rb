@@ -8,5 +8,6 @@ RSpec.describe Reservation, type: :model do
 
   describe 'relations' do 
     it { should belong_to :guest}
+    it { should have_many :occupied_rooms}
   end 
 end 

@@ -1,5 +1,6 @@
 class Room < ApplicationRecord
   belongs_to :property
+  has_many :occupied_rooms
   
   validates :room_type, presence: true
   validates :price, presence: true  

@@ -10,5 +10,6 @@ RSpec.describe Room, type: :model do
 
   describe 'relations' do 
     it { should belong_to :property}
+    it { should have_many :occupied_rooms}
   end 
 end 
