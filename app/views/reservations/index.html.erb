@@ -1,6 +1,6 @@
 <h1>All Reservations</h1>
 <% @reservations.each do |reservation| %>
-  <h3><%= @guest.last_name %>, <%= @guest.first_name %></h3>
+  <h3><%= @guest.last_name %>, <%= @guest.first_name %></h3> -- <%= link_to "Show guest profile", guest_reservation_path(@guest, reservation) %>
   <p>Check in <%= reservation.date_in %></p>
   <p>Check out <%= reservation.date_out %></p>
 <% end  %>
