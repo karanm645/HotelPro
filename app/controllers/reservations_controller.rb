@@ -7,6 +7,11 @@ class ReservationsController < ApplicationController
     @guest = Guest.find(params[:guest_id])
     @reservations = @guest.reservations
   end 
+
+  def show
+    @guest = Guest.find(params[:guest_id])
+    @reservations = @guest.reservations.find_by(params[:reservation_id])
+  end 
   
   def new
     @property = Property.find_by(params[:property_id])

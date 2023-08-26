@@ -1,6 +1,5 @@
 <h1>Please Enter Check In and Check Out dates</h1>
 
-<h1>Please Enter Your Property Information</h1>
 <%= form_for [@guest, @reservation] do |f| %>
   <%= f.label :date_in %>
   <%= f.date_field :date_in, class: 'form-control' %>  
