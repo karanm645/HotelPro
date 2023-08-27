@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :guests do 
     resources :reservations do 
+      resources :occupied_rooms
     end 
   end 
 

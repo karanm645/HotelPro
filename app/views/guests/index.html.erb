@@ -1,5 +1,7 @@
 <h1> All guests </h1>
 
 <% @guests.each do |guest| %>
-  <p><%= guest.last_name %>, <%= guest.first_name %>
+  <p><%= guest.last_name %>, <%= guest.first_name %></p>
+  <p><%= link_to "View Information",  guest_path(guest)%>
+  <p><%= link_to "Back", user_property_path(@user, @property) %></p>
 <% end %>
