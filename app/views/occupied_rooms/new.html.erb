@@ -1,0 +1,8 @@
+<h1>Check Guest In</h1>
+
+<%= form_with(model: [@guest, @reservation, @occupied_room], url: guest_reservation_occupied_rooms_path(@guest, @reservation)) do |form| %>
+    <%= form.label :room_id, 'Select a Room to Check In:' %>
+    <%= form.collection_select :room_id, @property.rooms, :id, :room_number %>
+
+    <%= form.submit 'Check In' %>
+<% end %>

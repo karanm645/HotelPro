@@ -1,0 +1,11 @@
+<h1>Occupied Rooms</h1>
+<p> Guest: <%= @guest.first_name %> <%= @guest.last_name %></p>
+<p> Reservation Date: <%= @reservation.date_in %> to <%= @reservation.date_out %></p>
+
+<% @occupied_rooms.each do |occupied_room| %>
+  <p><%= occupied_room.room.room_number %></p>
+  <p><%= occupied_room.room.room_type %></p>
+  <p><%= occupied_room.room.price %></p>
+<% end %>
+
+<%= link_to 'Check Guest In', new_guest_reservation_occupied_room_path(@guest, @reservation) %>

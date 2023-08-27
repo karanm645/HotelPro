@@ -2,4 +2,4 @@
 <h2>Phone Number: <%= @guest.phone_number %></h2>
 <h3>Check In: <%= @reservations.date_in %></h3>
 <h3>Check Out: <%= @reservations.date_out %></h3>
-<p>Check Guest In</p>
+<p><%= link_to "Check In Page", guest_reservation_occupied_rooms_path(@guest, @reservations) %></p>

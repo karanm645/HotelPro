@@ -1,5 +1,11 @@
 class GuestsController < ApplicationController
 
+  def show 
+    @user = current_user
+    @property = @user.properties.find_by(params[:property_id])
+    @guest = @property.guests.find_by(params[:guest_id])
+  end
+  
   def index 
     @user = current_user
     @property = @user.properties.find_by(params[:property_id])
