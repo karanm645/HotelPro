@@ -37,6 +37,7 @@ class PropertiesController < ApplicationController
   def destroy 
     @user = current_user
     @property = @user.properties.find(params[:id])
+    @property.guests.destroy_all
     @property.destroy
     redirect_to user_properties_path(@user)
   end 

@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
   root 'pages#home'
+  #/dashboard
   resources :users do
     resources :properties do
       resources :rooms
     end 
   end 
 
+  # get '/property_guests', to: 'property_guests#index'
   resources :guests do 
     resources :reservations do 
       resources :occupied_rooms

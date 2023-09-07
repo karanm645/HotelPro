@@ -12,10 +12,6 @@ describe 'when user clicks the create reservation button' do
       fill_in('Password', with: '123')
       click_button "Log In"
 
-      visit user_property_rooms_path(@user, @property)
-      expect(page).to have_link("New Guest")
-
-      click_link "New Guest"
       visit new_guest_path
       expect(page).to have_text("Please Enter The Guest Information")
     end 

@@ -3,5 +3,7 @@
 <% @guests.each do |guest| %>
   <p><%= guest.last_name %>, <%= guest.first_name %></p>
   <p><%= link_to "View Information",  guest_path(guest)%>
-  <p><%= link_to "Back", user_property_path(@user, @property) %></p>
+  <p><%= link_to "Edit Guest",  edit_guest_path(guest)%>
 <% end %>
+  <p><%= link_to "Create New Guest", new_guest_path %></p>
+  <p><%= link_to "Back", user_property_path(@user, @property) %></p>
