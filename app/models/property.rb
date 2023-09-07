@@ -1,6 +1,6 @@
 class Property < ApplicationRecord
   belongs_to :user
-  has_many :rooms, dependent: :delete_all
+  has_many :rooms, dependent: :destroy
   has_many :guests, dependent: :delete_all
   
   validates :name, presence: true

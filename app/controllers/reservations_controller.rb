@@ -6,8 +6,8 @@ class ReservationsController < ApplicationController
   end 
 
   def show
-    @guest = Guest.find(params[:guest_id])
-    @reservations = @guest.reservations.find_by(params[:reservation_id])
+    @guest = Guest.find(params[:id])
+    @reservation = @guest.reservations.find_by(params[:reservation_id])
   end 
   
   def new

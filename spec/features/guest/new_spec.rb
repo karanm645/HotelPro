@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Guest Form" do 
-  describe 'when user clicks the create reservation button' do 
+  describe 'when user clicks the create guest button' do 
     before(:each) do 
       @user = User.create(username: "karanm645", password: "123")
       @property = @user.properties.create!(name: "days inn", street: "111", city: "ABQ", state: "NM", zip_code: 77963, phone_number: 7206335555)
@@ -12,10 +12,10 @@ RSpec.describe "Guest Form" do
       fill_in('Password', with: '123')
       click_button "Log In"
 
-      visit user_property_rooms_path(@user, @property)
-      expect(page).to have_link("New Guest")
+      visit guests_path(@user, @property)
+      expect(page).to have_link("Create New Guest")
 
-      click_link "New Guest"
+      click_link "Create New Guest"
       visit new_guest_path
       expect(page).to have_text("Please Enter The Guest Information")
     end 

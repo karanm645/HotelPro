@@ -8,4 +8,5 @@
   <p><%= occupied_room.room.price %></p>
 <% end %>
 
-<%= link_to 'Check Guest In', new_guest_reservation_occupied_room_path(@guest, @reservation) %>
+<p><%= link_to 'Check Guest In', new_guest_reservation_occupied_room_path(@guest, @reservation) %></p>
+<p><%= link_to 'Back', guest_reservation_path(@guest, @reservation) %></p>

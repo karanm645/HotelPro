@@ -1,6 +1,6 @@
 class Room < ApplicationRecord
   belongs_to :property
-  has_many :occupied_rooms
+  has_many :occupied_rooms, dependent: :delete_all
   
   validates :room_type, presence: true
   validates :price, presence: true  

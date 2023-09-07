@@ -1,3 +1,4 @@
 <p><%= @guest.first_name %></p>
 <p><%= @occupied_room.room.room_number %></p>
 <p><%= @occupied_room.room.room_type %></p>
+<%= link_to "Guest Page", guest_path(@user, @property)%>
