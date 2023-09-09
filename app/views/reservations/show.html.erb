@@ -2,5 +2,5 @@
 <h2>Phone Number: <%= @guest.phone_number %></h2>
 <h3>Check In: <%= @reservation.date_in %></h3>
 <h3>Check Out: <%= @reservation.date_out %></h3>
-<p><%= link_to "Check In Page", guest_reservation_occupied_rooms_path(@guest, @reservation) %></p>
-<p><%= link_to "Back to Reservations", guest_reservations_path(@guest) %></p>
+<p><%= link_to "Check In Page", new_user_property_guest_reservation_occupied_room_path(@user, @property, @guest, @reservation) %></p>
+<p><%= link_to "Back to Reservations", user_property_guest_reservations_path(@user, @property, @guest) %></p>

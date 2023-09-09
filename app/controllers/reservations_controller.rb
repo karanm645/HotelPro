@@ -1,28 +1,34 @@
 class ReservationsController < ApplicationController
 
   def index 
-    @guest = Guest.find(params[:guest_id])
+    @user = current_user
+    @property = @user.properties.find(params[:property_id])
+    @guest = @property.guests.find(params[:guest_id])
     @reservations = @guest.reservations
   end 
 
   def show
-    @guest = Guest.find(params[:id])
+    @user = current_user
+    @property = @user.properties.find(params[:property_id])
+    @guest = @property.guests.find(params[:guest_id])
     @reservation = @guest.reservations.find_by(params[:reservation_id])
   end 
   
   def new
-    @property = Property.find_by(params[:property_id])
-    @guest = Guest.find(params[:guest_id])
-    @reservation = Reservation.new
+    @user = current_user
+    @property = @user.properties.find(params[:property_id])
+    @guest = @property.guests.find(params[:guest_id])
+    @reservation = @guest.reservations.new
   end 
 
   def create 
-    #@property = Property.find_by(params[:property_id])
-    @guest = Guest.find(params[:guest_id])
+    @user = current_user
+    @property = @user.properties.find(params[:property_id])
+    @guest = @property.guests.find(params[:guest_id])
     @reservation = @guest.reservations.create!(reservation_params)
     
     @reservation.save 
-    redirect_to guest_reservations_path(@guest)
+    redirect_to user_property_guest_reservations_path(@user, @property, @guest)
   end
 
   private

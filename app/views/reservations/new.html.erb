@@ -1,10 +1,12 @@
 <h1>Please Enter Check In and Check Out dates</h1>
 
-<%= form_for [@guest, @reservation] do |f| %>
+<%= form_for [@user, @property, @guest, @reservation] do |f| %>
   <%= f.label :date_in %>
   <%= f.date_field :date_in, class: 'form-control' %>  
   <%= f.label :date_out %>
   <%= f.date_field :date_out, class: 'form-control' %>
   <%= f.submit "Submit" %>
 <% end %>
+
+<p><%= link_to "Back", user_property_guest_path(@user, @property, @guest) %><p>
 

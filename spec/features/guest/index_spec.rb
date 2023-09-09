@@ -11,7 +11,7 @@ RSpec.describe "Guest Index Page" do
       fill_in('Password', with: '123')
       click_button "Log In"
 
-      visit guests_path
+      visit user_property_guests_path
 
       expect(page).to have_content("All guests")
       expect(page).to have_link("View Information")

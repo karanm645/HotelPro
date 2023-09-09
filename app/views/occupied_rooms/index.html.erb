@@ -3,10 +3,8 @@
 <p> Reservation Date: <%= @reservation.date_in %> to <%= @reservation.date_out %></p>
 
 <% @occupied_rooms.each do |occupied_room| %>
-  <p><%= occupied_room.room.room_number %></p>
-  <p><%= occupied_room.room.room_type %></p>
-  <p><%= occupied_room.room.price %></p>
+  <p><%= link_to occupied_room.room.room_number, user_property_guest_reservation_occupied_room_path(@user, @property, @guest, @reservation, occupied_room) %></p>
 <% end %>
 
-<p><%= link_to 'Check Guest In', new_guest_reservation_occupied_room_path(@guest, @reservation) %></p>
-<p><%= link_to 'Back', guest_reservation_path(@guest, @reservation) %></p>
+<p><%= link_to 'Check Guest In', new_user_property_guest_reservation_occupied_room_path(@user, @property, @guest, @reservation) %></p>
+<p><%= link_to 'Back', user_property_guest_reservation_path(@user, @property, @guest, @reservation) %></p>

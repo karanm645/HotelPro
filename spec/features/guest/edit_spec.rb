@@ -11,12 +11,12 @@ RSpec.describe "Guest Form" do
       fill_in('Password', with: '123')
       click_button "Log In"
 
-      visit guests_path
+      visit user_property_guests_path(@user, @property)
 
       expect(page).to have_link("Edit Guest")
 
       click_link "Edit Guest"
-      visit edit_guest_path(@guest)
+      visit edit_user_property_guest_path(@user, @property, @guest)
       expect(page).to have_text("Edit Guest Information")
     end 
     
@@ -28,7 +28,7 @@ RSpec.describe "Guest Form" do
       click_button("Submit")
 
       @guest = Guest.last
-      visit guests_path
+      visit user_property_guests_path(@user, @property)
     end 
   end 
 end 
