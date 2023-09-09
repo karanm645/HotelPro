@@ -12,7 +12,7 @@ describe 'when user clicks the create reservation button' do
       fill_in('Password', with: '123')
       click_button "Log In"
 
-      visit new_guest_path
+      visit new_user_property_guest_path(@user, @property)
       expect(page).to have_text("Please Enter The Guest Information")
     end 
     
@@ -24,7 +24,7 @@ describe 'when user clicks the create reservation button' do
       click_button("Submit")
 
       @guest = Guest.last
-      visit new_guest_reservation_path(@guest)
+      visit new_user_property_guest_reservation_path(@user, @property, @guest)
 
       expect(page).to have_text("Please Enter Check In and Check Out dates")
 

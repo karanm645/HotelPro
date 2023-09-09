@@ -3,16 +3,22 @@ Rails.application.routes.draw do
   #/dashboard
   resources :users do
     resources :properties do
+      resources :dashboard, only: [:index]
       resources :rooms
+      resources :guests do 
+        resources :reservations do 
+          resources :occupied_rooms
+        end 
+      end 
     end 
   end 
 
   # get '/property_guests', to: 'property_guests#index'
-  resources :guests do 
-    resources :reservations do 
-      resources :occupied_rooms
-    end 
-  end 
+  # resources :guests do 
+  #   resources :reservations do 
+  #     resources :occupied_rooms
+  #   end 
+  # end 
 
 
   # resources :users, only: [:create, :show]

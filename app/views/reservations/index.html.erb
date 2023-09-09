@@ -1,7 +1,7 @@
 <h1>All Reservations</h1>
 <% @reservations.each do |reservation| %>
   <h3><%= @guest.last_name %>, <%= @guest.first_name %></h3> 
-  <p><%= link_to "View Reservation", guest_reservation_path(@guest, reservation) %></p>
+  <p><%= link_to "View Reservation", user_property_guest_reservation_path(@user, @property, @guest, reservation) %></p>
 <% end  %>
 
-<p><%= link_to "Back", guests_path %>
+<p><%= link_to "Back", user_property_guests_path %>

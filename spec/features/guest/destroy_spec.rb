@@ -12,12 +12,12 @@ RSpec.describe "Delete Guests", type: :feature do
       @property = @user.properties.create!(name: "days inn", street: "111", city: "ABQ", state: "NM", zip_code: 77963, phone_number: 7206335555)
       @guest = @property.guests.create!(first_name: "karan", last_name: "mehta", phone_number: "7202229389")
 
-      visit guest_path(@user, @property, @guest)
+      visit user_property_guest_path(@user, @property, @guest)
       expect(page).to have_content(@guest.first_name)
 
       click_button "Delete"
 
-      visit guests_path(@user, @property)
+      visit user_property_guests_path(@user, @property)
       #expect(page).to_not have_content("days inn")
     end 
   end 

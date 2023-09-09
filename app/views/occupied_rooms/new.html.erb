@@ -1,9 +1,9 @@
 <h1>Check Guest In</h1>
 
-<%= form_with(model: [@guest, @reservation, @occupied_room], url: guest_reservation_occupied_rooms_path(@guest, @reservation)) do |form| %>
+<%= form_with(model: [@user, @property, @guest, @reservation, @occupied_room], url: user_property_guest_reservation_occupied_rooms_path(@user, @property, @guest, @reservation)) do |form| %>
     <%= form.label :room_id, 'Select a Room to Check In:' %>
     <%= form.collection_select :room_id, @property.rooms, :id, :room_number %>
 
     <%= form.submit 'Check In' %>
 <% end %>
-<p><%= link_to 'Back', guest_reservation_occupied_rooms_path(@guest, @reservation) %></p>
+<p><%= link_to 'Back', user_property_guest_reservation_occupied_rooms_path(@guest, @reservation) %></p>

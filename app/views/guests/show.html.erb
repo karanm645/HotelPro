@@ -1,4 +1,4 @@
 <h1>Page of <%= @guest.first_name %></h1>
-<p><%= link_to "Reservations", guest_reservation_path(@property, @guest) %></p>
-<p><%= link_to "Back", guests_path %></p>
-<p><%= button_to "Delete", guest_path(@guest), method: :delete %>
+<p><%= link_to "Reservations", new_user_property_guest_reservation_path(@user, @property, @guest) %></p>
+<p><%= link_to "Back", user_property_guests_path %></p>
+<p><%= button_to "Delete", user_property_guest_path(@user, @property, @guest), method: :delete %>

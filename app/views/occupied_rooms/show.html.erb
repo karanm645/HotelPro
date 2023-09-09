@@ -1,4 +1,6 @@
 <p><%= @guest.first_name %></p>
 <p><%= @occupied_room.room.room_number %></p>
 <p><%= @occupied_room.room.room_type %></p>
-<%= link_to "Guest Page", guest_path(@user, @property)%>
+<%= link_to "Guest Page", user_property_guest_path(@user, @property, @guest)%>
+<p><%= link_to "Back", user_property_guest_reservation_occupied_rooms_path(@user, @property, @guest, @reservation) %></p>
+<p><%= button_to "Delete", user_property_guest_reservation_occupied_room_path(@user, @property, @guest, @reservation, @occupied_room), method: :delete %></p>
