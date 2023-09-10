@@ -6,4 +6,4 @@
 
     <%= form.submit 'Check In' %>
 <% end %>
-<p><%= link_to 'Back', user_property_guest_reservation_occupied_rooms_path(@guest, @reservation) %></p>
+<p><%= link_to 'Back', user_property_guest_reservation_occupied_rooms_path(@user, @property, @guest, @reservation) %></p>
