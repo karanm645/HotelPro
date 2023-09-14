@@ -1,0 +1,13 @@
+<h1>Welcome to <%= @property.name %>'s Dashboard!
+<h2>Here is a list of all the rooms</h2>
+<% @rooms.each do |room| %>
+  <p><%= room.room_number %><p>
+<% end %>
+<h2>Here is a list of all guests</h2>
+<% @property.guests.each do |guest| %>
+  <p><%= guest.first_name %> <%= guest.last_name %></p>
+  <% guest.reservations.each do |reservation| %>
+  <p>-Arriving on: <%= reservation.date_in %> | Departing on: <%= reservation.date_out %></p>
+  <% end %>
+<% end %>
+<p><%= link_to "Back", user_property_path(@user, @property) %></p>
