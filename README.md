@@ -50,7 +50,8 @@ As a takehome challenge, my goal is to create an API (time limit 8 hours) for fr
 Testing: [rspec-rails](https://github.com/rspec/rspec-rails), [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers), [simplecov](https://github.com/simplecov-ruby/simplecov)
  
 ### Database Design
-![image](<img width="837" alt="image" src="https://github.com/karanm645/HotelPro/assets/79548116/c785dd3e-827d-4ba1-9456-f5b0ab76c892">)
+![image](https://github.com/karanm645/HotelPro/assets/79548116/8e118797-12d7-44cc-97a6-e9f23e94af34)
+
 
 ### Local Setup
 
