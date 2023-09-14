@@ -1,7 +1,7 @@
 [Hotel Pro Deployed Site](https://hotelpro.fly.dev/)
 
-# [image](<![image](https://github.com/karanm645/HotelPro/assets/79548116/11474ce8-0c59-407e-82da-fcbe97caf4f2)
-)
+# ![image](https://github.com/karanm645/HotelPro/assets/79548116/7975b5df-1584-4075-b328-609ef24aa2a8)
+
 
 
 <details open="open">
