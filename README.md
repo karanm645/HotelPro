@@ -38,7 +38,7 @@ This project is a backend reservation system. As a hotelier + programmer, I foun
   
   
 ### Learning Goals of Project 
-As a takehome challenge, my goal is to create an API (time limit 8 hours) for front-end developers to consume.
+I wanted to start this project from scratch and (1) practice building objects and creating relations (2) integrate CICD (3) and use logic that can simplify how hoteliers check in their guests!
 
 ### Versions
 
