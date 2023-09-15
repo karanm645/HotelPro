@@ -34,7 +34,7 @@
 </details>
  
 ## About This Project
-This is a back-end project to connect customers to a tea subscription service. The endpoints created will subscribe a customer, cancel a subscription, and show all subscriptions pertaining to the customer.
+This project is a backend reservation system. As a hotelier + programmer, I found a niche of hotel owners who log reservation details on paper manually and want something simple yet useful to manage their guests and reservations. Update: I'm currently building out the dashboard and excited to finish that and design the templates!
   
   
 ### Learning Goals of Project 
