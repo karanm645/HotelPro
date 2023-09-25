@@ -22,3 +22,8 @@ Save your credentials in a secure place -- you won't be able to see them again!
 ## fly.io prompts
 
 https://medium.com/@NadyaShevtsova/fly-io-import-postgres-dump-b7c643ccb673
+
+# Dashboard 
+- on the left bar, there will be only guests arriving today
+  - so create a model method that has the guests arriving only today in the Guest model
+- underneath the guests arriving today, there will be a check in process where the guest will be checked in and put into a room which will reflect on the list of all rooms section with a conditional
