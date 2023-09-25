@@ -5,6 +5,9 @@ class DashboardsController < ApplicationController
     @guest = @property.guests.find_by(params[:guest_id])
     @rooms = @property.rooms.all
     @reservation = @guest.reservations.find_by(params[:reservation_id])
-    @occupied_room = @reservation.occupied_rooms.all
+    @all_guests = @property.guests
+    @occupied_rooms = @reservation.occupied_rooms
+    @occupied_room = @reservation.occupied_rooms.find_by(params[:occupied_room_id])
+    #@occupied_room = @reservation.occupied_rooms.all
   end 
 end 

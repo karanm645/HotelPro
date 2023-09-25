@@ -1,13 +1,34 @@
 <h1>Welcome to <%= @property.name %>'s Dashboard!
-<h2>Here is a list of all the rooms</h2>
+<h2>All Rooms</h2>
 <% @rooms.each do |room| %>
-  <p><%= room.room_number %><p>
+  <% if !room.occupied_rooms.empty? %>
+    <p><%= room.room_number %> - Occupied</p>
+  <% else %>
+    <p><%= room.room_number %> - Vacant</p>
+  <% end  %>
 <% end %>
-<h2>Here is a list of all guests</h2>
+
+<!--<h2>All guests</h2>
 <% @property.guests.each do |guest| %>
   <p><%= guest.first_name %> <%= guest.last_name %></p>
   <% guest.reservations.each do |reservation| %>
-  <p>-Arriving on: <%= reservation.date_in %> | Departing on: <%= reservation.date_out %></p>
+    <p>-Arriving on: <%= reservation.date_in %> | Departing on: <%= reservation.date_out %></p>
+  <% end %>
+<% end %>-->
+
+<%@all_guests.each do |g| %>
+  <p><% g.reservations.todays_arrivals.each do |present| %></p>
+    <% present.reservations.each do |reservation| %>
+      <% if reservation.occupied_rooms.empty? %>
+      <h2>Arriving today</h2>
+      <p><%= present.last_name %>, <%= present.first_name %></p>
+        <p><%= link_to "Check In", new_user_property_guest_reservation_occupied_room_path(@user, @property, present, reservation) %></p>
+      <% else %>
+        <h2>In house</h2>
+        <p><%= present.last_name %>, <%= present.first_name %> <%= button_to "Check Out", user_property_guest_reservation_occupied_room_path(@user, @property, present, reservation, reservation.occupied_rooms), method: :delete %></p>
+      <% end  %>
+    <% end %>
   <% end %>
 <% end %>
+
 <p><%= link_to "Back", user_property_path(@user, @property) %></p>

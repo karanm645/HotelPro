@@ -11,5 +11,4 @@ RSpec.describe Guest, type: :model do
     it { should belong_to :property}
     xit { should have_many :reservations}
   end 
-
 end 
