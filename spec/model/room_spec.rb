@@ -5,7 +5,6 @@ RSpec.describe Room, type: :model do
     it { should validate_presence_of(:room_type)}
     it { should validate_presence_of(:price)}
     it { should validate_presence_of(:room_number)}
-    it { should validate_presence_of(:count)}
   end 
 
   describe 'relations' do 

@@ -10,7 +10,7 @@ RSpec.describe "Room Index Page", type: :feature do
       click_button "Log In"
 
       @property1 = @user.properties.create!(name: "days inn", street: "111", city: "ABQ", state: "NM", zip_code: 77963, phone_number: 7206335555)
-      @room1 = @property1.rooms.create!(room_type: "NK1", price: 16.99, smoking: true, count: 22, room_number: 114)
+      @room1 = @property1.rooms.create!(room_type: "NK1", price: 16.99, smoking: true, room_number: 114)
       
       visit user_property_rooms_path(@user, @property1)
     end 
