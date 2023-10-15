@@ -30,7 +30,6 @@ RSpec.describe "Property Form" do
       fill_in('Room type', with: 'King')
       fill_in('Price', with: 59.99)
       check 'Smoking'
-      fill_in('Count', with: 20)
       fill_in('Room number', with: 114)
 
 
