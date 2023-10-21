@@ -5,5 +5,4 @@ RSpec.describe OccupiedRoom, type: :model do
     it { should belong_to :room}
     it { should belong_to :reservation}
   end 
-
 end 
