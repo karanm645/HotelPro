@@ -1,3 +1,10 @@
+# Next up
+## save changes and push up to github
+## create a boolean value with open/closed room -- logic in model
+## the logic should exist when rooms are created -- so room controller will have a method implemented in it 
+
+
+
 ## Rubucop prompts
 - bundle exec rubocop
 - bundle exec rubocop --format offenses

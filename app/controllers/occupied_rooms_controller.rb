@@ -20,11 +20,9 @@ class OccupiedRoomsController < ApplicationController
     @property = @user.properties.find(params[:property_id])
     @guest = @property.guests.find(params[:guest_id])
     @reservation = @guest.reservations.find(params[:reservation_id])
-    @vacant_rooms = @property.rooms - @reservation.occupied_rooms
+    @all_rooms = @property.rooms
+    @vacant_rooms = @all_rooms.vacant_rooms
     @occupied_room = @reservation.occupied_rooms.new
-    #@property.rooms.first.occupied_rooms --> this is how i will access rooms that are occupied
-    # so create a model method for the room to see if it has occupied rooms
-    binding.pry
   end 
   
   def create 
