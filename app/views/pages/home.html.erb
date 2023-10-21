@@ -1,3 +1,37 @@
-<h1>Welcome to HotelPro!</h1>
-<%= link_to "Sign Up", "/signup", method: :get %>
-<%= link_to "Log In", "/login", method: :get %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag 'header.css' %>
+    <%= stylesheet_link_tag 'welcome-style.css' %>
+  </head>
+  <body>
+    <div class="main-header">
+        <%= image_tag "pics/logo.png", :class => "logo"%>
+        <%= link_to "Sign Up", "/signup", method: :get, :class => "text" %>
+        <%= link_to "Log In", "/login", method: :get, :class => "text" %>
+    </div>
+  <div class="page-wrapper">
+    <div class="page">
+      <h1 class="title">Welcome to HotelPro!</h1>
+      <div class="intro">
+        <p>Booking a room for your customers just got easier with this seamless technology</p>
+      </div>
+
+      <div class="bullet-section">
+        <h2>Features</h2>
+        <ul>
+          <li>Check your guests in smoothly</li>
+          <li>Create reservations instantly</li>
+          <li>Keep your room status updated at all times!</li>
+        </ul>
+      </div>
+      <div class="image">
+        <%= image_tag("pics/anime_room.png", width: "60%", :class => "image") %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

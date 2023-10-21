@@ -1,0 +1,42 @@
+.page-wrapper {
+  background-color: bisque;
+}
+
+.page {
+  padding-top: 100px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 100px;
+  max-width: 80%;
+  background-color: rgb(255, 255, 255);
+}
+
+.title {
+  font-family: Roboto;
+  font-size: 40px;
+}
+
+.intro {
+  font-size: 20px;
+  font-family: serif;
+}
+
+.bullet-section {
+  margin-bottom: 20px;
+}
+
+.bullet-section h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(6, 6, 6);
+}
+
+.bullet-section ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  padding-left: 15px;
+}
+
+.bullet-section li {
+  margin-bottom: 5px;
+}
