@@ -10,7 +10,7 @@
   right: 0;
   z-index: 100;
 
-  background-color: rgb(28, 28, 25);
+  background-color: rgb(27, 27, 25);
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: black;
@@ -26,8 +26,6 @@
 
 .text {
   height: 100px;
-  /*
-  */
   font-size: 30px;
   color: rgb(196, 196, 174);
   text-decoration: none;
@@ -38,3 +36,17 @@
   display: flex;
   align-items: center;
 }
+
+.button {
+    height: 100px;
+    font-size: 30px;
+    color: rgb(196, 196, 174);
+    background-color: rgb(27, 27, 25);
+    text-decoration: none;
+    flex: 1;
+    margin-left: 70px;
+    margin-right: 35px;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+  }

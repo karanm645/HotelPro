@@ -1,8 +1,28 @@
-<h1>Check Guest In</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag 'header.css' %>
+    <%= stylesheet_link_tag 'welcome-style.css' %>
+  </head>
+  <body>
+    <div class="main-header">
+        <%= image_tag "pics/logo.png", :class => "logo"%>
+        <%= button_to "Logout", sessions_path, method: :delete, :class => "button" %>
+        
+    </div>
+    <div class="page">
+      <h1 class="title">Check Guest In</h1>
+        <%= form_with(model: [@user, @property, @guest, @reservation, @occupied_room], url: user_property_guest_reservation_occupied_rooms_path(@user, @property, @guest, @reservation)) do |form| %>
+            <%= form.label :room_id, 'Select a Room to Check In:' %>
+            <%= form.collection_select :room_id, @vacant_rooms, :id, :room_number %>
+            <%= form.submit 'Check In' %>
+        <% end %>
+        <p><%= link_to 'Back', user_property_dashboards_path(@user, @property) %></p>
+    </div>
+  </body>
+</html>
 
-<%= form_with(model: [@user, @property, @guest, @reservation, @occupied_room], url: user_property_guest_reservation_occupied_rooms_path(@user, @property, @guest, @reservation)) do |form| %>
-    <%= form.label :room_id, 'Select a Room to Check In:' %>
-    <%= form.collection_select :room_id, @vacant_rooms, :id, :room_number %>
-    <%= form.submit 'Check In' %>
-<% end %>
-<p><%= link_to 'Back', user_property_guest_reservation_occupied_rooms_path(@user, @property, @guest, @reservation) %></p>
+

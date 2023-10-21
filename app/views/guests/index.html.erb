@@ -1,9 +1,26 @@
-<h1> All guests </h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag 'header.css' %>
+    <%= stylesheet_link_tag 'welcome-style.css' %>
+  </head>
+  <body>
+    <div class="main-header">
+        <%= image_tag "pics/logo.png", :class => "logo"%>
+    </div>
+    <div class="page">
+      <h1 class="title">All Guests</h1>
+      <% @guests.each do |guest| %>
+        <p><%= guest.last_name %>, <%= guest.first_name %></p>
+        <p><%= link_to "View Information",  user_property_guest_path(@user, @property, guest)%>
+        <p><%= link_to "Edit Guest",  edit_user_property_guest_path(@user, @property, guest)%>
+      <% end %>
+      <p><%= link_to "Create New Guest", new_user_property_guest_path %></p>
+      <p><%= link_to "Back", user_property_path(@user, @property) %></p>
+    </div>
+  </body>
+</html>
 
-<% @guests.each do |guest| %>
-  <p><%= guest.last_name %>, <%= guest.first_name %></p>
-  <p><%= link_to "View Information",  user_property_guest_path(@user, @property, guest)%>
-  <p><%= link_to "Edit Guest",  edit_user_property_guest_path(@user, @property, guest)%>
-<% end %>
-  <p><%= link_to "Create New Guest", new_user_property_guest_path %></p>
-  <p><%= link_to "Back", user_property_path(@user, @property) %></p>

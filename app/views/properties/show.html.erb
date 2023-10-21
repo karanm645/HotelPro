@@ -1,7 +1,28 @@
-<h1><%= @property.name.capitalize %></h1>
-<p><%= link_to "View Rooms",  user_property_rooms_path(@user, @property)%></p>
-<p><%= link_to "View All Guests",  user_property_guests_path(@user, @property)%></p>
-<p><%= link_to "Dashboard",  user_property_dashboards_path(@user, @property)%></p>
-<p><%= link_to "Edit",  edit_user_property_path(@user, @property)%></p>
-<p><%= link_to "Back", user_properties_path(@user) %></p>
-<p><%= button_to "Delete", user_property_path(@user, @property), method: :delete %></p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag 'header.css' %>
+    <%= stylesheet_link_tag 'welcome-style.css' %>
+  </head>
+  <body>
+    <div class="main-header">
+        <%= image_tag "pics/logo.png", :class => "logo"%>
+        <%= button_to "Logout", sessions_path, method: :delete, :class => "button" %>
+    </div>
+    <div class="page">
+      <h1 class="title"> <%= @property.name.capitalize %></h1>
+      <p><%= link_to "Add Rooms",  user_property_rooms_path(@user, @property)%></p>
+      <p><%= link_to "View All Guests",  user_property_guests_path(@user, @property)%></p>
+      <p><%= link_to "Dashboard",  user_property_dashboards_path(@user, @property)%></p>
+      <p><%= link_to "Edit",  edit_user_property_path(@user, @property)%></p>
+      <p><%= link_to "Back", user_properties_path(@user) %></p>
+      <p><%= button_to "Delete", user_property_path(@user, @property), method: :delete %></p>
+    </div>
+  </body>
+</html>
+
+
+
