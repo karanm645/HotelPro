@@ -1,10 +1,28 @@
-<%= form_for @user do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
-  <%= f.submit "Create Account" %>
-
-<% end %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag 'header.css' %>
+    <%= stylesheet_link_tag 'sign_up.css' %>
+  </head>
+  <body>
+    <div class="main-header">
+        <%= image_tag "pics/logo.png", :class => "logo"%>
+    </div>
+  <div class="page-wrapper">
+    <div class="page">
+      <%= form_for @user do |f| %>
+        <%= f.label :username %>
+        <%= f.text_field :username %>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+        <%= f.submit "Create Account" %>
+      <% end %>
+    </div>
+  </div>
+</body>
+</html>

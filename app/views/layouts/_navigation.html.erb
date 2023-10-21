@@ -10,28 +10,11 @@
     <div class="main-header">
 
         <%= image_tag "pics/logo.png", :class => "logo"%>
-        <%#= link_to "Logout", href="/", :class => "text" %>
         <% if logged_in? %>
           <%= button_to "Logout", sessions_path, method: :delete, :class => "text" %>
         <% else %>
           <%= button_to "Login Page", login_path, method: :get, :class => "text" %>
         <% end %>
-        <!--<%= link_to "Articles", href="/all_articles", :class => "text" %>
-        <%= link_to "Projects", href="/projects", :class => "text" %>
-        <%= link_to "Hire Me", href="/hire_me", :class => "text" %>
-        -->
     </div>
-
-<!--<label>
-<input type="checkbox">
-<span class="menu"> <span class="hamburger"></span> </span>
-<ul>
-  <li> <a href="/">Home</a> </li>
-  <li> <a href="/all_articles">Articles</a> </li>
-  <li> <a href="/projects">Projects</a> </li>
-  <li> <a href="/hire_me">Hire Me</a> </li>
-</ul>
-</label>
--->
 </body>
 </html>
