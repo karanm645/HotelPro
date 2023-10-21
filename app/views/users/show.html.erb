@@ -1,4 +1,21 @@
-<h1> Welcome to the page of <%= @user.username %></h1>
-
-<%= link_to "Add Property", new_user_property_path(@user) %>
-<%= link_to "View Properties", user_properties_path(@user) %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag 'header.css' %>
+    <%= stylesheet_link_tag 'welcome-style.css' %>
+  </head>
+  <body>
+    <div class="main-header">
+        <%= image_tag "pics/logo.png", :class => "logo"%>
+        <%= button_to "Logout", sessions_path, method: :delete, :class => "button" %>
+    </div>
+    <div class="page">
+      <h1 class="title"> Welcome to the page of <%= @user.username %></h1>
+      <p><%= link_to "Add Property", new_user_property_path(@user) %></p>
+      <p><%= link_to "View Properties", user_properties_path(@user) %></p>
+    </div>
+</body>
+</html>

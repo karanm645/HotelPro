@@ -8,8 +8,7 @@
   </head>
   <body>
     <div class="main-header">
-
-        <%= image_tag "pics/logo.png", :class => "logo"%>
+      <%= image_tag "pics/logo.png", :class => "logo"%>
         <% if logged_in? %>
           <%= button_to "Logout", sessions_path, method: :delete, :class => "text" %>
         <% else %>

@@ -1,19 +1,37 @@
-<h1>Please Enter Your Property Information</h1>
-<%= form_for [@user, @property] do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :street %>
-  <%= f.text_field :street %>
-  <%= f.label :city %>
-  <%= f.text_field :city %>
-  <%= f.label :state %>
-  <%= f.text_field :state %>
-  <%= f.label :zip_code %>
-  <%= f.text_field :zip_code %>
-  <%= f.label :phone_number %>
-  <%= f.text_field :phone_number %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag 'header.css' %>
+    <%= stylesheet_link_tag 'welcome-style.css' %>
+  </head>
+  <body>
+    <div class="main-header">
+        <%= image_tag "pics/logo.png", :class => "logo"%>
+        <%= button_to "Logout", sessions_path, method: :delete, :class => "button" %>
+    </div>
+    <div class="page">
+      <h1 class="title"> Please Enter Your Property Information</h1>
+        <%= form_for [@user, @property] do |f| %>
+          <%= f.label :name %>
+          <%= f.text_field :name %>
+          <%= f.label :street %>
+          <%= f.text_field :street %>
+          <%= f.label :city %>
+          <%= f.text_field :city %>
+          <%= f.label :state %>
+          <%= f.text_field :state %>
+          <%= f.label :zip_code %>
+          <%= f.text_field :zip_code %>
+          <%= f.label :phone_number %>
+          <%= f.text_field :phone_number %>
 
-  <%= f.submit "Submit" %>
-<% end %>
+          <%= f.submit "Submit" %>
+        <% end %>
+        <p><%= link_to "Back", user_path(@user) %></p>
+    </div>
+  </body>
+</html>
 
-<p><%= link_to "Back", user_path(@user) %></p>

@@ -1,12 +1,28 @@
-<h1>Please Enter The Guest Information</h1>
-
-<%= form_for [@user, @property, @guest] do |f| %>
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %>
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %>
-  <%= f.label :phone_number %>
-  <%= f.text_field :phone_number %>
-
-  <%= f.submit "Submit" %>
-<% end %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag 'header.css' %>
+    <%= stylesheet_link_tag 'welcome-style.css' %>
+  </head>
+  <body>
+    <div class="main-header">
+        <%= image_tag "pics/logo.png", :class => "logo"%>
+        <%= button_to "Logout", sessions_path, method: :delete, :class => "button" %>
+    </div>
+    <div class="page">
+      <h1 class="title">Please Enter The Guest Information</h1>
+      <%= form_for [@user, @property, @guest] do |f| %>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %>
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %>
+        <%= f.label :phone_number %>
+        <%= f.text_field :phone_number %>
+        <%= f.submit "Submit" %>
+      <% end %>
+    </div>
+  </body>
+</html>

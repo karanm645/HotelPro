@@ -28,9 +28,12 @@ class ReservationsController < ApplicationController
     @reservation = @guest.reservations.create!(reservation_params)
     
     @reservation.save 
-    redirect_to user_property_guest_reservations_path(@user, @property, @guest)
+    redirect_to user_property_path(@user, @property)
+    #redirect_to user_property_guest_reservations_path(@user, @property, @guest)
   end
 
+  def update
+  end 
   private
 
   def reservation_params 
