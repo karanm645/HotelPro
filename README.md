@@ -30,7 +30,7 @@
 </details>
  
 ## About This Project
-This project is a backend reservation system. As a hotelier + programmer, I found a niche of hotel owners who log reservation details on paper manually and want something simple yet useful to manage their guests and reservations. Update: I'm currently building out the dashboard and excited to finish that and design the templates!
+This project is a backend reservation system. As a hotelier + programmer, I found a niche of hotel owners who log reservation details on paper manually and want something simple yet useful to manage their guests and reservations. Update: I've finished basic functionalities such as creating properties and guests, and having a dashboard to check in guests.
   
   
 ### Learning Goals of Project 
