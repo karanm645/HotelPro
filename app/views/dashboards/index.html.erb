@@ -39,7 +39,7 @@
             <div class="in-house">
               <h2>In-house</h2>
               <p><%= present.last_name %>, <%= present.first_name %> </p>
-              <p><%= link_to "Check Out", user_property_guest_reservation_occupied_room_path(@user, @property, present, reservation, reservation.occupied_rooms), method: :delete %></p>
+              <p><%= button_to "Check Out", user_property_guest_reservation_occupied_room_path(@user, @property, present, reservation, reservation.occupied_rooms), method: :delete %></p>
             </div>
             <% end  %>
           <% end %>
