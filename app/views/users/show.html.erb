@@ -13,9 +13,11 @@
         <%= button_to "Logout", sessions_path, method: :delete, :class => "button" %>
     </div>
     <div class="page">
-      <h1 class="title"> Welcome to the page of <%= @user.username %></h1>
-      <p><%= link_to "Add Property", new_user_property_path(@user) %></p>
-      <p><%= link_to "View Properties", user_properties_path(@user) %></p>
+      <h1 class="title"> Welcome, <%= @user.username %></h1>
+      <div class="intro">
+      <ul><%= link_to "Add Property", new_user_property_path(@user) %></ul>
+      <ul><%= link_to "View Properties", user_properties_path(@user) %></ul>
+      </div>
     </div>
 </body>
 </html>
