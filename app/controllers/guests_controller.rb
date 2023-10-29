@@ -49,7 +49,7 @@ class GuestsController < ApplicationController
     
     @guest.reservations.destroy_all
     @guest.destroy
-    redirect_to user_property_guests_path(@user, @property)
+    redirect_to user_property_dashboards_path(@user, @property)
   end 
 
   private

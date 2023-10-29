@@ -14,12 +14,20 @@
     </div>
     <div class="page">
       <h1 class="title"> <%= @property.name.capitalize %></h1>
-      <p><%= link_to "View Rooms",  user_property_rooms_path(@user, @property)%></p>
-      <p><%= link_to "View All Guests",  user_property_guests_path(@user, @property)%></p>
-      <p><%= link_to "Dashboard",  user_property_dashboards_path(@user, @property)%></p>
-      <p><%= link_to "Edit",  edit_user_property_path(@user, @property)%></p>
-      <p><%= link_to "Back", user_properties_path(@user) %></p>
-      <p><%= button_to "Delete", user_property_path(@user, @property), method: :delete %></p>
+      <div class="intro">
+      <ul><%= link_to "View Rooms",  user_property_rooms_path(@user, @property)%></ul>
+      <ul><%= link_to "View All Guests",  user_property_guests_path(@user, @property)%></ul>
+      <%if @rooms.empty? %>
+      <ul><%= link_to "Your dashboard will be ready when you add rooms and guests",  user_property_rooms_path(@user, @property)%></ul>
+      <%elsif @property.guests.empty? %>
+      <ul><%= link_to "Your dashboard will be ready when you add rooms and guests",  user_property_guests_path(@user, @property)%></ul>
+      <% else %>
+      <ul><%= link_to "Dashboard",  user_property_dashboards_path(@user, @property)%></ul>
+      <%end %>
+      </div>
+      <ul><%= link_to "Edit",  edit_user_property_path(@user, @property)%></ul>
+      <ul><%= link_to "Back", user_properties_path(@user) %></ul>
+      <ul><%= button_to "Delete", user_property_path(@user, @property), method: :delete %></ul>
     </div>
   </body>
 </html>

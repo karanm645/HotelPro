@@ -15,10 +15,12 @@
     <div class="page">
       <h1 class="title">All properties</h1>
       <% @properties.each do |property| %>
-        <p><%= link_to property.name, user_property_path(@user, property) %></p>
+      <div class="intro">
+        <ul><%= link_to property.name, user_property_path(@user, property) %></ul>
+     </div>
       <% end %>
 
-<p><%= link_to "Back", user_path(@user) %>
+<ul><%= link_to "Back", user_path(@user) %></ul>
     </div>
   </body>
 </html>

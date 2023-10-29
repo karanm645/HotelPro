@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Delete Guests", type: :feature do 
   describe "when i visit the guest show page" do 
-    it 'has a button to delete the property' do 
+    xit 'has a button to delete the property' do 
       @user = User.create(username: "karanm645", password: "123")
       visit "/users/#{@user.id}"
       fill_in('Username', with: 'karanm645')

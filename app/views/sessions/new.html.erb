@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag 'header.css' %>
     <%= stylesheet_link_tag 'credentials.css' %>
+    <%= stylesheet_link_tag 'welcome-style.css' %>
   </head>
   <body>
     <div class="main-header">
@@ -15,6 +16,8 @@
   <div class="page-wrapper">
     <div class="page">
 <%= form_tag sessions_path do %>
+<h1 class="intro">Please enter your username and password</h1>
+
   <%= label_tag "Username" %>
   <%= text_field_tag :username, nil, placeholder: "Username" %>
   <%= label_tag "Password" %>
