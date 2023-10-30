@@ -13,20 +13,49 @@
         <%= image_tag "pics/logo.png", :class => "logo"%>
         <%= button_to "Logout", sessions_path, method: :delete, :class => "button" %>
     </div>
+
     <div class="page-format">
       <h1 class="title">Welcome to <%= @property.name %>'s Dashboard!</h1>
-      <div class="room-list">
+        
+      <div class="all-rooms"> 
         <h2>All Rooms</h2>
-        <% @rooms.each do |room| %>
-          <% if !room.occupied_rooms.empty? %>
-            <p><%= room.room_number %> - Occupied</p>
-          <% else %>
-            <p><%= room.room_number %> - Vacant</p>
-          <% end  %>
-        <% end %>
+          <% @rooms.each do |room| %>
+            <% if !room.occupied_rooms.empty? %>
+              <p><%= room.room_number %> - Occupied</p>
+            <% else %>
+              <p><%= room.room_number %> - Vacant</p>
+            <% end  %>
+          <% end %>
       </div>
 
-      <%@all_guests.each do |g| %>
+      <div class="arrivals">
+        <h2>Arrivals</h2> 
+        <%@all_guests.each do |g| %>
+          <% g.reservations.todays_arrivals.each do |present| %>
+            <% present.reservations.each do |reservation| %>
+              <% if reservation.occupied_rooms.empty? %>
+                <p><%= present.last_name %>, <%= present.first_name %></p>
+                <p><%= link_to "Check In", new_user_property_guest_reservation_occupied_room_path(@user, @property, present, reservation) %></p>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %> 
+      </div>
+
+      <div class="in-house">
+        <h2>In-House</h2>
+        <%@all_guests.each do |g| %>
+          <% g.reservations.todays_arrivals.each do |present| %>
+            <% present.reservations.each do |reservation| %>
+              <% if !reservation.occupied_rooms.empty? %>
+                <p><%= present.last_name %>, <%= present.first_name %></p>
+                <p><%= button_to "Check Out", user_property_guest_reservation_occupied_room_path(@user, @property, present, reservation, reservation.occupied_rooms), method: :delete %></p>
+              <% end %>
+            <% end %>
+          <% end %>  
+        <% end %>
+      </div>
+      <!--<%@all_guests.each do |g| %>
         <p><% g.reservations.todays_arrivals.each do |present| %></p>
           <% present.reservations.each do |reservation| %>
             <% if reservation.occupied_rooms.empty? %>
@@ -45,6 +74,7 @@
           <% end %>
         <% end %>
       <% end %>
+      -->
 
       <p><%= link_to "Back", user_property_path(@user, @property) %></p>  
     </div>
