@@ -8,23 +8,30 @@
   background-color: white;
 }
 
-.all-rooms {
+.columns {
   display: grid;
-  text-align: center;
+  grid-template-columns: 1fr;
+  column-gap: 15px;
+  row-gap: 5px;
+}
+
+.all-rooms {
+  /*display: grid;
+  text-align: center;*/
   width: 50%;
   column-gap: 50px;
 } 
 
 .arrivals {
-  display: grid;
-  text-align: center;
+  /*display: grid;
+  text-align: center;*/
   width: 50%;
   column-gap: 50px;
 }
 
 .in-house {
-  display: grid;
-  text-align: center;
+  /*display: grid;
+  text-align: center;*/
   width: 50%;
   column-gap: 50px;
 }

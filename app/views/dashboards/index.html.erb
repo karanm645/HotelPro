@@ -19,6 +19,7 @@
         
       <div class="all-rooms"> 
         <h2>All Rooms</h2>
+      <div class="columns">
           <% @rooms.each do |room| %>
             <% if !room.occupied_rooms.empty? %>
               <p><%= room.room_number %> - Occupied</p>
@@ -30,12 +31,12 @@
 
       <div class="arrivals">
         <h2>Arrivals</h2> 
+        <div class="columns">
         <%@all_guests.each do |g| %>
           <% g.reservations.todays_arrivals.each do |present| %>
             <% present.reservations.each do |reservation| %>
               <% if reservation.occupied_rooms.empty? %>
-                <p><%= present.last_name %>, <%= present.first_name %></p>
-                <p><%= link_to "Check In", new_user_property_guest_reservation_occupied_room_path(@user, @property, present, reservation) %></p>
+                <p><%= present.last_name %>, <%= present.first_name %>: <%= link_to "Check In", new_user_property_guest_reservation_occupied_room_path(@user, @property, present, reservation) %></p>
               <% end %>
             <% end %>
           <% end %>
@@ -44,12 +45,13 @@
 
       <div class="in-house">
         <h2>In-House</h2>
+        <div class="columns">
         <%@all_guests.each do |g| %>
           <% g.reservations.todays_arrivals.each do |present| %>
             <% present.reservations.each do |reservation| %>
               <% if !reservation.occupied_rooms.empty? %>
                 <p><%= present.last_name %>, <%= present.first_name %></p>
-                <p><%= button_to "Check Out", user_property_guest_reservation_occupied_room_path(@user, @property, present, reservation, reservation.occupied_rooms), method: :delete %></p>
+                <%= button_to "Check Out", user_property_guest_reservation_occupied_room_path(@user, @property, present, reservation, reservation.occupied_rooms), method: :delete %>
               <% end %>
             <% end %>
           <% end %>  
