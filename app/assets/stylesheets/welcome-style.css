@@ -3,7 +3,7 @@
 }
 
 .page {
-  padding-top: 40%;
+  padding-top: 150px;
   padding-left: 10%;
   padding-right: 10%;
   padding-bottom: 100px;
@@ -11,9 +11,14 @@
   background-color: white;
 }
 
+.hotel-pro-title {
+  font-size: 60px;
+  padding-top: 30%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .title {
   font-size: 60px;
-  padding-top: 40px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
